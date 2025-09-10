@@ -11,7 +11,8 @@ import (
 )
 
 var initCmd = &cobra.Command{
-	Use: "init",
+	Use:   "init",
+	Short: "Initialize auto-completion for your shell",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return InitSetup()
 	},

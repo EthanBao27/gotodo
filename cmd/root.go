@@ -66,9 +66,10 @@ var rootCmd = &cobra.Command{
 		fullCmd := cmd.CommandPath()
 		shouldShowPath := true
 
-		// Don't show path for list and config commands
+		// Don't show path for list, config, and completion commands
 		if fullCmd == "gotodo list" || fullCmd == "gotodo config" ||
-			fullCmd == "gotodo config show" || fullCmd == "gotodo config set-db" {
+			fullCmd == "gotodo config show" || fullCmd == "gotodo config set-db" ||
+			fullCmd == "gotodo completion" {
 			shouldShowPath = false
 		}
 
