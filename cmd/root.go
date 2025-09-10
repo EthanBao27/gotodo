@@ -32,8 +32,12 @@ var rootCmd = &cobra.Command{
 			if err := InitSetup(); err != nil {
 				return err
 			}
-			os.MkdirAll(filepath.Dir(marker), 0755)
-			os.WriteFile(marker, []byte("done"), 0644)
+			if err := os.MkdirAll(filepath.Dir(marker), 0755); err != nil {
+				return fmt.Errorf("failed to create directory: %v", err)
+			}
+			if err := os.WriteFile(marker, []byte("done"), 0644); err != nil {
+				return fmt.Errorf("failed to write marker file: %v", err)
+			}
 		}
 		// Load config if no --db flag is provided
 		if dbPath == "" {
@@ -56,18 +60,18 @@ var rootCmd = &cobra.Command{
 		} else {
 			storage.SetPath(storage.GetCurrentPath())
 		}
-		
+
 		// Only show database path for certain commands
 		// Get the full command path to check parent commands
 		fullCmd := cmd.CommandPath()
 		shouldShowPath := true
-		
+
 		// Don't show path for list and config commands
-		if fullCmd == "gotodo list" || fullCmd == "gotodo config" || 
-		   fullCmd == "gotodo config show" || fullCmd == "gotodo config set-db" {
+		if fullCmd == "gotodo list" || fullCmd == "gotodo config" ||
+			fullCmd == "gotodo config show" || fullCmd == "gotodo config set-db" {
 			shouldShowPath = false
 		}
-		
+
 		if shouldShowPath {
 			currentPath := storage.GetCurrentPath()
 			color.New(color.FgCyan).Printf("Using database path: %s\n", currentPath)

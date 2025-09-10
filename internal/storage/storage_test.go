@@ -259,7 +259,9 @@ func TestFilePermissions(t *testing.T) {
 	defer os.RemoveAll(tempDir)
 
 	// Make directory read-only
-	err = os.Chmod(tempDir, 0444)
+	if err = os.Chmod(tempDir, 0444); err != nil {
+		t.Fatalf("Failed to chmod directory: %v", err)
+	}
 	if err != nil {
 		t.Fatalf("Failed to change directory permissions: %v", err)
 	}
@@ -275,5 +277,7 @@ func TestFilePermissions(t *testing.T) {
 	}
 
 	// Restore permissions for cleanup
-	os.Chmod(tempDir, 0755)
+	if err := os.Chmod(tempDir, 0755); err != nil {
+		t.Fatalf("Failed to restore directory permissions: %v", err)
+	}
 }

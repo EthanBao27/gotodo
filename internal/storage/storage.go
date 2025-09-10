@@ -23,7 +23,9 @@ var filePath string
 func init() {
 	home, _ := os.UserHomeDir()
 	dir := filepath.Join(home, ".gotodo")
-	_ = os.MkdirAll(dir, 0755)
+	if err := os.MkdirAll(dir, 0755); err != nil {
+		fmt.Fprintf(os.Stderr, "Warning: failed to create directory: %v\n", err)
+	}
 	filePath = filepath.Join(dir, "tasks.json")
 }
 
@@ -129,4 +131,3 @@ func Delete(id int) error {
 func Clear() error {
 	return save([]Task{})
 }
-

@@ -46,7 +46,9 @@ func InitSetup() error {
 		return nil
 	case "fish":
 		dir := filepath.Join(usr.HomeDir, ".config/fish/completions")
-		_ = os.MkdirAll(dir, 0755)
+		if err := os.MkdirAll(dir, 0755); err != nil {
+			return err
+		}
 		f, err := os.Create(filepath.Join(dir, "gotodo.fish"))
 		if err != nil {
 			return err
