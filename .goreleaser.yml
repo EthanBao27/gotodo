@@ -1,6 +1,12 @@
 # .goreleaser.yml
 version: 2
 
+release:
+  overwrite: true
+  github:
+    owner: ethanbao27
+    name: gotodo
+
 builds:
   - binary: gotodo
     main: ./main.go
