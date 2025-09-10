@@ -1,0 +1,53 @@
+# ---> Go
+# Compiled binary executables
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binaries
+*.test
+
+# Go build output directories
+bin/
+out/
+
+# Go coverage files
+*.out
+
+# Dependency directories
+/vendor/
+/Godeps/
+
+# ---> IDE / Editors
+# GoLand / IntelliJ
+.idea/
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ---> Logs & Temp files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# ---> Project-specific
+# Ignore AI assistant notes
+CLAUDE.md
+**/CLAUDE.md
+.claude/
+
+# Ignore local environment configs
+.env
+*.local
