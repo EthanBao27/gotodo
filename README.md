@@ -29,6 +29,12 @@
 go install github.com/ethanbao27/gotodo@latest
 ```
 
+## Using Homebrew
+
+```bash
+brew install ethanbao27/tap/gotodo
+```
+
 ### From Source
 
 ```bash
