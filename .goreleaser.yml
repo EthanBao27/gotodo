@@ -5,8 +5,7 @@ release:
   github:
     owner: ethanbao27
     name: gotodo
-  replace_existing_draft: true
-  replace_existing: true
+  mode: replace
 
 builds:
   - binary: gotodo
@@ -39,7 +38,7 @@ changelog:
       - "^docs:"
       - "^test:"
 
-homebrew:
+brews:
   - name: gotodo
     repository:
       owner: ethanbao27
