@@ -5,6 +5,8 @@ release:
   github:
     owner: ethanbao27
     name: gotodo
+  replace_existing_draft: true
+  replace_existing: true
 
 builds:
   - binary: gotodo
@@ -37,7 +39,7 @@ changelog:
       - "^docs:"
       - "^test:"
 
-brews:
+homebrew:
   - name: gotodo
     repository:
       owner: ethanbao27
@@ -48,7 +50,8 @@ brews:
     description: "A tiny, delicate todo CLI written in Go"
     homepage: "https://github.com/ethanbao27/gotodo"
     license: "MIT"
-    skip_upload: false
+    install: |
+      bin.install "gotodo"
     test: |
-      system "#{bin}/gotodo --version"
-      system "#{bin}/gotodo --help"
+      system "#{bin}/gotodo", "--version"
+      system "#{bin}/gotodo", "--help"
