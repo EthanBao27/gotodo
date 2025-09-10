@@ -43,7 +43,7 @@ brews:
     description: "A tiny, delicate todo CLI written in Go"
     homepage: "https://github.com/ethanbao27/gotodo"
     license: "MIT"
-    skip_upload: auto
+    skip_upload: true
     test: |
       system "#{bin}/gotodo --version"
       system "#{bin}/gotodo --help"
