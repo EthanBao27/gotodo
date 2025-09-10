@@ -43,6 +43,7 @@ brews:
     repository:
       owner: ethanbao27
       name: homebrew-tap
+      token: "{{ .Env.GITHUB_TOKEN }}"
     commit_author:
       name: goreleaserbot
       email: goreleaser@github.com
