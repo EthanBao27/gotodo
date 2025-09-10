@@ -51,3 +51,8 @@ CLAUDE.md
 # Ignore local environment configs
 .env
 *.local
+
+# Others
+gotodo
+*.zsh
+*.sh
