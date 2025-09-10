@@ -21,17 +21,11 @@ builds:
 
 archives:
   - format: tar.gz
-    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
-    replacements:
-      darwin: macOS
-      linux: Linux
-      windows: Windows
-      amd64: x86_64
-      arm64: ARM64
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ tolower .Os }}_{{ tolower .Arch }}"
     files:
       - LICENSE
       - README.md
-      - LICENSE
+    wrap_in_directory: true
 
 checksum:
   name_template: "checksums.txt"
