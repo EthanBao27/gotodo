@@ -18,12 +18,13 @@
 
 ## ✨ Features
 
-- 🚀 Simple and intuitive CLI interface
-- 🔍 Automatic shell completion (bash, zsh, fish)
-- 📝 Task management (add, list, done, delete, clear)
-- 🎨 Color-coded output for better readability
-- 💾 Persistent storage in JSON format
-- 🌍 Cross-platform support (Linux, macOS, Windows)
+- 🚀 Simple and intuitive CLI interface  
+- 🔍 Automatic shell completion (bash, zsh, fish)  
+- 📝 Task management (add, list, done, delete, clear)  
+- 🎨 Color-coded output for better readability  
+- 💾 Persistent storage in JSON format  
+- 🌍 Cross-platform support (Linux, macOS, Windows)  
+- 🤝 **Friend mode**: share and view todo lists over the network (port `8088`) 
 
 ## 🚀 Installation
 
@@ -79,6 +80,29 @@ gotodo delete <task-id>
 # Clear all tasks
 gotodo clear --yes
 ```
+
+### 📌 Friend Mode (Experimental)
+
+You can share your todo list with friends in the same LAN or via public IP.
+The port is fixed at 8088.
+
+Start a Friend Server
+
+```bash
+gotodo friend serve 0.0.0.0
+```
+
+- 127.0.0.1 → local only
+- 192.168.1.23(your ip) → LAN only
+- 0.0.0.0 → allow external connections
+
+Connect to a Friend:
+
+```bash
+gotodo friend connect 192.168.1.23
+```
+
+(Port 8088 is automatically appended, so you only need to provide the IP)
 
 ### Using Different Storage Location
 
