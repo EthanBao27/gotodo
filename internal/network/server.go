@@ -40,25 +40,37 @@ func handleConnection(conn net.Conn) {
 
 	req := strings.TrimSpace(string(buf[:n]))
 	if req != "GET_TODOS" {
-		conn.Write([]byte("invalid request"))
+		if _, err := conn.Write([]byte("invalid request")); err != nil {
+			fmt.Println("write error:", err)
+			return
+		}
 		color.New(color.FgYellow).Printf("Invalid request from %s\n", conn.RemoteAddr())
 		return
 	}
 
 	tasks, err := storage.List()
 	if err != nil {
-		conn.Write([]byte("failed to load tasks"))
+		if _, err := conn.Write([]byte("failed to load tasks")); err != nil {
+			fmt.Println("write error:", err)
+			return
+		}
 		color.New(color.FgRed).Println("Failed to load local tasks")
 		return
 	}
 
 	data, err := json.MarshalIndent(tasks, "", "  ")
 	if err != nil {
-		conn.Write([]byte("json error"))
+		if _, err := conn.Write([]byte("json error")); err != nil {
+			fmt.Println("write error:", err)
+			return
+		}
 		color.New(color.FgRed).Println("JSON marshal error")
 		return
 	}
 
-	conn.Write(data)
+	if _, err := conn.Write(data); err != nil {
+		fmt.Println("write error:", err)
+		return
+	}
 	color.New(color.FgGreen).Printf("Shared %d tasks with %s\n", len(tasks), conn.RemoteAddr())
 }
