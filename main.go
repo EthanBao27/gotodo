@@ -12,8 +12,8 @@ import (
 
 var (
 	version = "dev"
-	commit  = "none"
-	date    = "unknown"
+	_      = "none" // commit variable is injected by goreleaser
+	_      = "unknown" // date variable is injected by goreleaser
 )
 
 func main() {
