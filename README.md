@@ -1,8 +1,8 @@
-# gotodo
 
 <p align="center">
-  <img src="assets/gotodo-banner.svg" width="450" alt="gotodo banner">
+  <img src="assets/gotodo-banner.svg" width="550" alt="gotodo banner">
 </p>
+
 
 > A tiny, delicate todo CLI written in Go.
 
@@ -11,6 +11,10 @@
   <img src="https://img.shields.io/github/license/ethanbao27/gotodo?style=for-the-badge&color=%23D699B6&labelColor=%232D353B" alt="License">
   <img src="https://img.shields.io/badge/Go-1.24%2B-%23A7C080?style=for-the-badge&logo=go&logoColor=white&labelColor=%232D353B" alt="Go">
 </p>
+
+<div>
+<img src="./assets/gotodo.png"></img>
+</div>
 
 ## ✨ Features
 
