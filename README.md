@@ -142,3 +142,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Author
 
 Created by [Ethan Bao](https://github.com/ethanbao27)
+
+<a href="https://github.com/ethanbao27/gotodo/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ethanbao27/gotodo" />
+</a>
