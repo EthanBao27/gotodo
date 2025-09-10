@@ -1,16 +1,33 @@
 # gotodo
 
-A tiny, delicate todo-cli written in Go.
+<p align="center">
+  <img src="assets/gotodo-banner.svg" width="450" alt="gotodo banner">
+</p>
 
-## Installation
+> A tiny, delicate todo CLI written in Go.
 
-### Install from source
+![Release](https://img.shields.io/github/v/release/ethanbao27/gotodo?style=for-the-badge&color=%2383C092&labelColor=%232D353B)
+![License](https://img.shields.io/github/license/ethanbao27/gotodo?style=for-the-badge&color=%23D699B6&labelColor=%232D353B)
+![Go](https://img.shields.io/badge/Go-1.24%2B-%23A7C080?style=for-the-badge&logo=go&logoColor=white&labelColor=%232D353B)
+
+## ✨ Features
+
+- 🚀 Simple and intuitive CLI interface
+- 🔍 Automatic shell completion (bash, zsh, fish)
+- 📝 Task management (add, list, done, delete, clear)
+- 🎨 Color-coded output for better readability
+- 💾 Persistent storage in JSON format
+- 🌍 Cross-platform support (Linux, macOS, Windows)
+
+## 🚀 Installation
+
+### Using Go
 
 ```bash
 go install github.com/ethanbao27/gotodo@latest
 ```
 
-### Build from source
+### From Source
 
 ```bash
 git clone https://github.com/ethanbao27/gotodo.git
@@ -18,82 +35,55 @@ cd gotodo
 go build
 ```
 
-## Usage
+### Using Binary
 
-### First Time Setup
+Download the latest binary from [Releases](https://github.com/ethanbao27/gotodo/releases)
 
->[!notice]
-> When you run `gotodo` for the first time, you should configure shell completion:
+## 🎯 Quick Start
+
+Add your first task:
 
 ```bash
-gotodo init
+gotodo add "My first task"
 ```
 
-Output:
-```
-© Copy configuring gotodo completion
-Added zsh completion to /Users/username/.zshrc, run 'source /Users/username/.zshrc' to enable.
-```
+## Usage
 
 ### Basic Commands
 
-#### Add a task
-
 ```bash
+# Add a new task
 gotodo add "Task content"
-```
 
-#### List all tasks
-
-```bash
+# List all tasks
 gotodo list
-```
 
-#### List only done tasks
-
-```bash
-gotodo list --done
-```
-
-#### List only undone tasks
-
-```bash
-gotodo list --undone
-```
-
-#### Mark a task as done
-
-```bash
+# Mark a task as done
 gotodo done <task-id>
-```
 
-#### Delete a task
-
-```bash
+# Delete a task
 gotodo delete <task-id>
-```
 
-#### Clear all tasks
-
-```bash
+# Clear all tasks
 gotodo clear --yes
 ```
 
-#### Use custom database path
+### Using Different Storage Location
 
 ```bash
-gotodo --db /path/to/custom/file.json <command>
+# Use a specific file to store tasks
+gotodo --db /path/to/tasks.json list
 ```
 
-## Features
+### Shell Completion
 
-- **Simple and intuitive CLI interface**
-- **Automatic shell completion setup** (supports bash, zsh, fish)
-- **Task management** (add, list, mark as done, delete)
-- **Progress tracking** with visual progress bar
-- **Color-coded output** for better readability
-- **Persistent storage** using JSON files
-- **Cross-platform support** (Linux, macOS, Windows)
+gotodo supports shell completion for:
+
+- Bash
+- Zsh
+- Fish
+
+Shell completion is automatically configured during installation.
 
 ## Development
 
@@ -101,37 +91,29 @@ gotodo --db /path/to/custom/file.json <command>
 
 - Go 1.24 or later
 
-### Building
+### Build
 
 ```bash
 go build
 ```
 
-### Testing
+### Test
 
 ```bash
-# Run all tests
 go test -v ./...
-
-# Run tests with coverage
-go test -v -coverprofile=coverage.out ./...
-go tool cover -html=coverage.out -o coverage.html
-
-# Run tests with race detection
-go test -race -v ./...
 ```
 
-### Linting
+### Lint
 
 ```bash
 golangci-lint run
 ```
 
-## License
+## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
