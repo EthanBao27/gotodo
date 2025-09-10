@@ -6,9 +6,11 @@
 
 > A tiny, delicate todo CLI written in Go.
 
-![Release](https://img.shields.io/github/v/release/ethanbao27/gotodo?style=for-the-badge&color=%2383C092&labelColor=%232D353B)
-![License](https://img.shields.io/github/license/ethanbao27/gotodo?style=for-the-badge&color=%23D699B6&labelColor=%232D353B)
-![Go](https://img.shields.io/badge/Go-1.24%2B-%23A7C080?style=for-the-badge&logo=go&logoColor=white&labelColor=%232D353B)
+<p align="center">
+  <img src="https://img.shields.io/github/v/release/ethanbao27/gotodo?style=for-the-badge&color=%2383C092&labelColor=%232D353B" alt="Release">
+  <img src="https://img.shields.io/github/license/ethanbao27/gotodo?style=for-the-badge&color=%23D699B6&labelColor=%232D353B" alt="License">
+  <img src="https://img.shields.io/badge/Go-1.24%2B-%23A7C080?style=for-the-badge&logo=go&logoColor=white&labelColor=%232D353B" alt="Go">
+</p>
 
 ## ✨ Features
 
