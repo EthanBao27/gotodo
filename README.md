@@ -22,17 +22,17 @@ go build
 
 ### First Time Setup
 
-When you run `gotodo` for the first time, it will automatically configure shell completion:
+>[!notice]
+> When you run `gotodo` for the first time, you should configure shell completion:
 
 ```bash
-gotodo list
+gotodo init
 ```
 
 Output:
 ```
 © Copy configuring gotodo completion
 Added zsh completion to /Users/username/.zshrc, run 'source /Users/username/.zshrc' to enable.
-No tasks.
 ```
 
 ### Basic Commands
